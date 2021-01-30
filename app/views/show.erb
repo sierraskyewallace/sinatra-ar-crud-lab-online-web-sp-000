@@ -1,9 +1,14 @@
-<h2>Article Number <%= @article.id %></h2>
-<h2 id="title"><%= @article.title %></h2>
-<p><%= @article.content %></p>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p><%= @article[:title] %></p>
+<p><%= @article[:content] %></p>
 
-<h3>Delete this Article?</h3>
 <form method="POST" action="/articles/<%= @article.id %>">
-<input id="hidden" type="hidden" value="DELETE">
-<input type="submit" value="DELETE">
+<input id="hidden" type="hidden" name="_method" value="DELETE">
+<input type="submit" value="delete">
 </form>
+</body>
+</html>
